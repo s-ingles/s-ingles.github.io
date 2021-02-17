@@ -7,6 +7,8 @@ gdjs.MenuSceneCode.GDGameTitleObjects1= [];
 gdjs.MenuSceneCode.GDGameTitleObjects2= [];
 gdjs.MenuSceneCode.GDInstructionsObjects1= [];
 gdjs.MenuSceneCode.GDInstructionsObjects2= [];
+gdjs.MenuSceneCode.GDContinueObjects1= [];
+gdjs.MenuSceneCode.GDContinueObjects2= [];
 gdjs.MenuSceneCode.GDKenneyObjects1= [];
 gdjs.MenuSceneCode.GDKenneyObjects2= [];
 gdjs.MenuSceneCode.GDPlayerModelObjects1= [];
@@ -19,10 +21,24 @@ gdjs.MenuSceneCode.GDBonusObjects2= [];
 gdjs.MenuSceneCode.conditionTrue_0 = {val:false};
 gdjs.MenuSceneCode.condition0IsTrue_0 = {val:false};
 gdjs.MenuSceneCode.condition1IsTrue_0 = {val:false};
-gdjs.MenuSceneCode.condition2IsTrue_0 = {val:false};
 
 
 gdjs.MenuSceneCode.eventsList0 = function(runtimeScene) {
+
+{
+
+
+gdjs.MenuSceneCode.condition0IsTrue_0.val = false;
+{
+gdjs.MenuSceneCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().get("Mute")) == -(1);
+}if (gdjs.MenuSceneCode.condition0IsTrue_0.val) {
+{gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "assets\\sfx\\Audio\\Theyre-Here_Looping.mp3", 1, true, 100, 1);
+}}
+
+}
+
+
+};gdjs.MenuSceneCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -43,27 +59,9 @@ gdjs.copyArray(runtimeScene.getObjects("Background"), gdjs.MenuSceneCode.GDBackg
 
 gdjs.MenuSceneCode.condition0IsTrue_0.val = false;
 {
-gdjs.MenuSceneCode.condition0IsTrue_0.val = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Space");
+gdjs.MenuSceneCode.condition0IsTrue_0.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Return");
 }if (gdjs.MenuSceneCode.condition0IsTrue_0.val) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "BaseScene", true);
-}}
-
-}
-
-
-{
-
-
-gdjs.MenuSceneCode.condition0IsTrue_0.val = false;
-gdjs.MenuSceneCode.condition1IsTrue_0.val = false;
-{
-gdjs.MenuSceneCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().get("Mute")) == -(1);
-}if ( gdjs.MenuSceneCode.condition0IsTrue_0.val ) {
-{
-gdjs.MenuSceneCode.condition1IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
-}}
-if (gdjs.MenuSceneCode.condition1IsTrue_0.val) {
-{gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "assets\\sfx\\Audio\\Theyre-Here_Looping.mp3", 1, true, 100, 1);
 }}
 
 }
@@ -121,6 +119,41 @@ gdjs.MenuSceneCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumb
 }
 
 
+{
+
+
+gdjs.MenuSceneCode.condition0IsTrue_0.val = false;
+{
+gdjs.MenuSceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+}if (gdjs.MenuSceneCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Continue"), gdjs.MenuSceneCode.GDContinueObjects1);
+{for(var i = 0, len = gdjs.MenuSceneCode.GDContinueObjects1.length ;i < len;++i) {
+    gdjs.MenuSceneCode.GDContinueObjects1[i].getBehavior("Flash").Flash(3, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+}
+{ //Subevents
+gdjs.MenuSceneCode.eventsList0(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+gdjs.MenuSceneCode.condition0IsTrue_0.val = false;
+{
+gdjs.MenuSceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, 3, "FlashLoop");
+}if (gdjs.MenuSceneCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Continue"), gdjs.MenuSceneCode.GDContinueObjects1);
+{for(var i = 0, len = gdjs.MenuSceneCode.GDContinueObjects1.length ;i < len;++i) {
+    gdjs.MenuSceneCode.GDContinueObjects1[i].getBehavior("Flash").Flash(3, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+}}
+
+}
+
+
 };
 
 gdjs.MenuSceneCode.func = function(runtimeScene) {
@@ -134,6 +167,8 @@ gdjs.MenuSceneCode.GDGameTitleObjects1.length = 0;
 gdjs.MenuSceneCode.GDGameTitleObjects2.length = 0;
 gdjs.MenuSceneCode.GDInstructionsObjects1.length = 0;
 gdjs.MenuSceneCode.GDInstructionsObjects2.length = 0;
+gdjs.MenuSceneCode.GDContinueObjects1.length = 0;
+gdjs.MenuSceneCode.GDContinueObjects2.length = 0;
 gdjs.MenuSceneCode.GDKenneyObjects1.length = 0;
 gdjs.MenuSceneCode.GDKenneyObjects2.length = 0;
 gdjs.MenuSceneCode.GDPlayerModelObjects1.length = 0;
@@ -143,7 +178,7 @@ gdjs.MenuSceneCode.GDHPObjects2.length = 0;
 gdjs.MenuSceneCode.GDBonusObjects1.length = 0;
 gdjs.MenuSceneCode.GDBonusObjects2.length = 0;
 
-gdjs.MenuSceneCode.eventsList0(runtimeScene);
+gdjs.MenuSceneCode.eventsList1(runtimeScene);
 return;
 
 }

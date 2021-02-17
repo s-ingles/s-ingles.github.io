@@ -400,7 +400,7 @@ gdjs.BaseSceneCode.GDTopScoreObjects1.length = 0;
 
 gdjs.BaseSceneCode.condition0IsTrue_0.val = false;
 {
-gdjs.BaseSceneCode.condition0IsTrue_0.val = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Return");
+gdjs.BaseSceneCode.condition0IsTrue_0.val = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Return");
 }if (gdjs.BaseSceneCode.condition0IsTrue_0.val) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "MenuScene", true);
 }}
