@@ -3072,7 +3072,15 @@
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Flash",
+              "type": "Flash::Flash",
+              "HalfPeriodTime": 0.3,
+              "IsFlashing": false,
+              "FlashDuration": 0
+            }
+          ],
           "string": "Press Enter to Continue...",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 20,
@@ -5810,6 +5818,19 @@
                     "\"Top Score: \"+GlobalVariableString(TopScore)"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Flash::Flash::Flash"
+                  },
+                  "parameters": [
+                    "Instruct",
+                    "Flash",
+                    "20",
+                    ""
+                  ],
+                  "subInstructions": []
                 }
               ],
               "events": []
@@ -5836,6 +5857,40 @@
           ],
           "actions": [],
           "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Timer"
+                  },
+                  "parameters": [
+                    "",
+                    "20",
+                    "\"EndTimer\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"MenuScene\"",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
             {
               "disabled": false,
               "folded": false,

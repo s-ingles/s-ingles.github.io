@@ -388,12 +388,28 @@ gdjs.BaseSceneCode.GDTopScoreObjects1.length = 0;
 }{for(var i = 0, len = gdjs.BaseSceneCode.GDTopScoreObjects1.length ;i < len;++i) {
     gdjs.BaseSceneCode.GDTopScoreObjects1[i].setString("Top Score: " + gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().get("TopScore")));
 }
+}{for(var i = 0, len = gdjs.BaseSceneCode.GDInstructObjects1.length ;i < len;++i) {
+    gdjs.BaseSceneCode.GDInstructObjects1[i].getBehavior("Flash").Flash(20, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
 }}
 
 }
 
 
 };gdjs.BaseSceneCode.eventsList7 = function(runtimeScene) {
+
+{
+
+
+gdjs.BaseSceneCode.condition0IsTrue_0.val = false;
+{
+gdjs.BaseSceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, 20, "EndTimer");
+}if (gdjs.BaseSceneCode.condition0IsTrue_0.val) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "MenuScene", true);
+}}
+
+}
+
 
 {
 
