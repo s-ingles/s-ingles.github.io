@@ -404,6 +404,20 @@
         "name": "assets\\gfx\\Bonus\\logo.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "file": "assets/sfx/Audio/Steamtech-Mayhem_Looping_v001.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\Audio\\Steamtech-Mayhem_Looping_v001.mp3",
+        "userAdded": true
+      },
+      {
+        "file": "assets/sfx/Audio/Theyre-Here_Looping.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\Audio\\Theyre-Here_Looping.mp3",
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -412,6 +426,400 @@
   "objectsGroups": [],
   "variables": [],
   "layouts": [
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Splash",
+      "name": "Splash",
+      "oglFOV": 90,
+      "oglZFar": 500,
+      "oglZNear": 1,
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridWidth": 32,
+        "snap": true,
+        "windowMask": false,
+        "zoomFactor": 0.712
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 900,
+          "layer": "Background",
+          "locked": false,
+          "name": "Background",
+          "persistentUuid": "c84ffbe7-775a-4752-9fad-3040689fc2ff",
+          "width": 500,
+          "x": 0,
+          "y": 0,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "locked": false,
+          "name": "PlayerModel",
+          "persistentUuid": "e4516edb-7bbe-4001-bc2f-0172fcbcbf53",
+          "width": 0,
+          "x": 200,
+          "y": 448,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "locked": false,
+          "name": "GameTitle",
+          "persistentUuid": "ad987d3b-35ef-42ba-bbff-03239e41247c",
+          "width": 0,
+          "x": 38,
+          "y": 331,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "locked": false,
+          "name": "Instruction",
+          "persistentUuid": "edba31bb-3762-423d-86ac-f66b791f569a",
+          "width": 0,
+          "x": 27,
+          "y": 595,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "bold": true,
+          "italic": false,
+          "name": "GameTitle",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "Star Chaser",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 50,
+          "color": {
+            "b": 0,
+            "g": 255,
+            "r": 252
+          }
+        },
+        {
+          "name": "PlayerModel",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets\\gfx\\PNG\\playerShip1_blue.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "height": 32,
+          "name": "Background",
+          "tags": "",
+          "texture": "assets\\gfx\\Backgrounds\\darkPurple.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 32,
+          "variables": [],
+          "behaviors": []
+        },
+        {
+          "bold": true,
+          "italic": false,
+          "name": "Instruction",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Flash",
+              "type": "Flash::Flash",
+              "HalfPeriodTime": 0.3,
+              "IsFlashing": false,
+              "FlashDuration": 0
+            }
+          ],
+          "string": "Press Enter to continue...",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 25,
+          "color": {
+            "b": 0,
+            "g": 255,
+            "r": 252
+          }
+        }
+      ],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CameraY"
+              },
+              "parameters": [
+                "",
+                "+",
+                "300*TimeDelta()",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TiledSpriteObject::YOffset"
+              },
+              "parameters": [
+                "Background",
+                "+",
+                "-300*TimeDelta()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "Return"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"MenuScene\"",
+                "yes"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "=",
+                "-1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Flash::Flash::Flash"
+              },
+              "parameters": [
+                "Instruction",
+                "Flash",
+                "3",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "3",
+                "\"FlashLoop\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Flash::Flash::Flash"
+              },
+              "parameters": [
+                "Instruction",
+                "Flash",
+                "3",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 1702453632,
+          "ambientLightColorG": 8747696,
+          "ambientLightColorR": 0,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Background",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453632,
+          "ambientLightColorG": 1801675136,
+          "ambientLightColorR": 0,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "UI",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Flash",
+          "type": "Flash::Flash"
+        }
+      ]
+    },
     {
       "b": 209,
       "disableInputWhenNotFocused": true,
@@ -483,7 +891,7 @@
           "persistentUuid": "523cb7d5-5553-4760-8bca-ac25768cff0c",
           "width": 0,
           "x": 16,
-          "y": 739,
+          "y": 695,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -498,8 +906,8 @@
           "name": "Kenney",
           "persistentUuid": "86d8e10a-13ee-4c37-a3a0-7ce245ab0373",
           "width": 0,
-          "x": 324,
-          "y": 785,
+          "x": 296,
+          "y": 788,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -514,8 +922,8 @@
           "name": "Kenney",
           "persistentUuid": "3aafedc9-ea0e-4e02-b73b-c00ef6c39220",
           "width": 0,
-          "x": 324,
-          "y": 840,
+          "x": 296,
+          "y": 843,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -547,7 +955,7 @@
           "persistentUuid": "73ce7a31-0f37-49b2-9d96-bcacbe52a38a",
           "width": 0,
           "x": 16,
-          "y": 252,
+          "y": 218,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -562,8 +970,8 @@
           "name": "HP",
           "persistentUuid": "43d50a0b-605b-49b7-ae94-0817d0100188",
           "width": 32,
-          "x": 345,
-          "y": 440,
+          "x": 348,
+          "y": 352,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -578,9 +986,25 @@
           "name": "Bonus",
           "persistentUuid": "e258f370-18e8-4824-9cc1-6f1ab84a232d",
           "width": 32,
-          "x": 345,
-          "y": 516,
+          "x": 348,
+          "y": 406,
           "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "UI",
+          "locked": false,
+          "name": "Continue",
+          "persistentUuid": "c2772946-c4d1-4571-9c82-05f3bfa97bc9",
+          "width": 0,
+          "x": 27,
+          "y": 581,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -607,7 +1031,7 @@
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "Development:     Sam Ingles\n\nGFX:\n\nSFX:",
+          "string": "Developer:                  Sam\n\nMusic:              soundimage.org\n\nGFX:\n\nSFX:",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 25,
           "color": {
@@ -645,7 +1069,34 @@
           "underlined": false,
           "variables": [],
           "behaviors": [],
-          "string": "Movement:            Up, Down, \n                                          Left, Right\n\n\nFire:                             SpaceBar\n\n\nHealth:\n\n\nBonus Points:\n\n\n\n       Press Space to Start!",
+          "string": "Movement:            Up, Down, \n                                          Left, Right\n\nFire:                             SpaceBar\n\nHealth Up:\n\nBonus Points:\n\nToggle Sound:               M",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 25,
+          "color": {
+            "b": 0,
+            "g": 255,
+            "r": 252
+          }
+        },
+        {
+          "bold": true,
+          "italic": false,
+          "name": "Continue",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Flash",
+              "type": "Flash::Flash",
+              "HalfPeriodTime": 0.3,
+              "IsFlashing": false,
+              "FlashDuration": 0
+            }
+          ],
+          "string": "Press Enter to continue...",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 25,
           "color": {
@@ -940,11 +1391,11 @@
             {
               "type": {
                 "inverted": false,
-                "value": "KeyPressed"
+                "value": "KeyReleased"
               },
               "parameters": [
                 "",
-                "Space"
+                "Return"
               ],
               "subInstructions": []
             }
@@ -959,6 +1410,249 @@
                 "",
                 "\"BaseScene\"",
                 "yes"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "m"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "=",
+                "GlobalVariable(Mute)*-1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                ">",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVolumeMusicCanal"
+              },
+              "parameters": [
+                "",
+                "1",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "<",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVolumeMusicCanal"
+              },
+              "parameters": [
+                "",
+                "1",
+                "=",
+                "50"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "=",
+                "-1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Flash::Flash::Flash"
+              },
+              "parameters": [
+                "Continue",
+                "Flash",
+                "3",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "Mute",
+                    "=",
+                    "-1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlayMusicCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\Audio\\Theyre-Here_Looping.mp3",
+                    "1",
+                    "yes",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "3",
+                "\"FlashLoop\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Flash::Flash::Flash"
+              },
+              "parameters": [
+                "Continue",
+                "Flash",
+                "3",
+                ""
               ],
               "subInstructions": []
             }
@@ -1012,7 +1706,12 @@
           "effects": []
         }
       ],
-      "behaviorsSharedData": []
+      "behaviorsSharedData": [
+        {
+          "name": "Flash",
+          "type": "Flash::Flash"
+        }
+      ]
     },
     {
       "b": 209,
@@ -2373,7 +3072,15 @@
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Flash",
+              "type": "Flash::Flash",
+              "HalfPeriodTime": 0.3,
+              "IsFlashing": false,
+              "FlashDuration": 0
+            }
+          ],
           "string": "Press Enter to Continue...",
           "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
           "characterSize": 20,
@@ -2435,6 +3142,102 @@
             "textG": 0,
             "textR": 0
           },
+          "comment": "Setup",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Speed",
+                "=",
+                "200"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "PlayMusicCanal"
+              },
+              "parameters": [
+                "",
+                "assets\\sfx\\Audio\\Steamtech-Mayhem_Looping_v001.mp3",
+                "1",
+                "yes",
+                "50",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "=",
+                "-1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
           "comment": "Controls",
           "comment2": ""
         },
@@ -2464,7 +3267,7 @@
               "parameters": [
                 "Player",
                 "0",
-                "600",
+                "Variable(Speed)*2",
                 "0"
               ],
               "subInstructions": []
@@ -2498,7 +3301,7 @@
               "parameters": [
                 "Player",
                 "180",
-                "600",
+                "Variable(Speed)*2",
                 "0"
               ],
               "subInstructions": []
@@ -2532,7 +3335,7 @@
               "parameters": [
                 "Player",
                 "270",
-                "600",
+                "Variable(Speed)*2",
                 "0"
               ],
               "subInstructions": []
@@ -2566,7 +3369,7 @@
               "parameters": [
                 "Player",
                 "90",
-                "600",
+                "Variable(Speed)*2",
                 "0"
               ],
               "subInstructions": []
@@ -2600,11 +3403,11 @@
               "parameters": [
                 "Player",
                 "FireBullet",
-                "Player.X()+5",
+                "Player.X()-15",
                 "Player.Y()",
                 "Bullet",
                 "270",
-                "900",
+                "Variable(Speed)*3",
                 ""
               ],
               "subInstructions": []
@@ -2617,12 +3420,45 @@
               "parameters": [
                 "Player",
                 "FireBullet",
-                "Player.X()+22",
+                "Player.X()+40",
                 "Player.Y()",
                 "Bullet",
                 "270",
-                "900",
+                "Variable(Speed)*3",
                 ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "m"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "=",
+                "GlobalVariable(Mute)*-1"
               ],
               "subInstructions": []
             }
@@ -2655,9 +3491,21 @@
                 "value": "FireBullet::FireBullet::HasJustFired"
               },
               "parameters": [
-                "Enemy2",
+                "Player",
                 "FireBullet",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "<",
+                "0"
               ],
               "subInstructions": []
             }
@@ -2670,9 +3518,9 @@
               },
               "parameters": [
                 "",
-                "assets\\sfx\\Audio\\laserRetro_004.ogg",
+                "assets\\sfx\\Audio\\laserRetro_001.ogg",
                 "",
-                "30",
+                "5",
                 "1"
               ],
               "subInstructions": []
@@ -2688,12 +3536,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "FireBullet::FireBullet::HasJustFired"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "Player",
-                "FireBullet",
-                ""
+                "Mute",
+                ">",
+                "0"
               ],
               "subInstructions": []
             }
@@ -2702,14 +3550,48 @@
             {
               "type": {
                 "inverted": false,
-                "value": "PlaySound"
+                "value": "ModVolumeMusicCanal"
               },
               "parameters": [
                 "",
-                "assets\\sfx\\Audio\\laserRetro_001.ogg",
+                "1",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "Mute",
+                "<",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVolumeMusicCanal"
+              },
+              "parameters": [
                 "",
-                "30",
-                "1"
+                "1",
+                "=",
+                "50"
               ],
               "subInstructions": []
             }
@@ -3013,69 +3895,6 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Camera",
-          "comment2": ""
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "CameraY"
-              },
-              "parameters": [
-                "",
-                "+",
-                "300*TimeDelta()",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "TiledSpriteObject::YOffset"
-              },
-              "parameters": [
-                "Background",
-                "+",
-                "-300*TimeDelta()"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "AddForceXY"
-              },
-              "parameters": [
-                "Player",
-                "0",
-                "300",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
           "comment": "Enemies",
           "comment2": ""
         },
@@ -3347,7 +4166,7 @@
               "parameters": [
                 "Enemy1",
                 "90",
-                "900",
+                "Variable(Speed)*3",
                 ""
               ],
               "subInstructions": []
@@ -3360,7 +4179,7 @@
               "parameters": [
                 "Enemy2",
                 "90",
-                "600",
+                "Variable(Speed)*3",
                 ""
               ],
               "subInstructions": []
@@ -3373,7 +4192,7 @@
               "parameters": [
                 "Enemy3",
                 "90",
-                "400",
+                "Variable(Speed)*2",
                 ""
               ],
               "subInstructions": []
@@ -3432,7 +4251,7 @@
                     "Enemy2.Y()+60",
                     "EnemyBullet",
                     "90",
-                    "900",
+                    "Variable(Speed)*4",
                     ""
                   ],
                   "subInstructions": []
@@ -3738,7 +4557,7 @@
               "parameters": [
                 "AllMeteors",
                 "90",
-                "1000",
+                "Variable(Speed)*3",
                 ""
               ],
               "subInstructions": []
@@ -4480,7 +5299,7 @@
               "parameters": [
                 "Player",
                 "Health",
-                "50",
+                "200",
                 ""
               ],
               "subInstructions": []
@@ -4507,23 +5326,46 @@
                 ""
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
-                "",
-                "75",
-                ""
-              ],
-              "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "Mute",
+                    "<",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\gfx\\Bonus\\sfx_shieldUp.ogg",
+                    "",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         },
         {
           "disabled": false,
@@ -4568,23 +5410,46 @@
                 ""
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "assets\\sfx\\Audio\\doorOpen_002.ogg",
-                "",
-                "50",
-                ""
-              ],
-              "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "Mute",
+                    "<",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\Audio\\doorOpen_002.ogg",
+                    "",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         },
         {
           "disabled": false,
@@ -4953,6 +5818,19 @@
                     "\"Top Score: \"+GlobalVariableString(TopScore)"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Flash::Flash::Flash"
+                  },
+                  "parameters": [
+                    "Instruct",
+                    "Flash",
+                    "20",
+                    ""
+                  ],
+                  "subInstructions": []
                 }
               ],
               "events": []
@@ -4987,7 +5865,41 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "KeyPressed"
+                    "value": "Timer"
+                  },
+                  "parameters": [
+                    "",
+                    "20",
+                    "\"EndTimer\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"MenuScene\"",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "KeyReleased"
                   },
                   "parameters": [
                     "",
@@ -5013,6 +5925,129 @@
               "events": []
             }
           ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Incremental Difficulty",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "10",
+                "\"SpeedTimer\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"SpeedTimer\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Speed",
+                "*",
+                "1.1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Camera",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CameraY"
+              },
+              "parameters": [
+                "",
+                "+",
+                "Variable(Speed)*TimeDelta()",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TiledSpriteObject::YOffset"
+              },
+              "parameters": [
+                "Background",
+                "+",
+                "-Variable(Speed)*TimeDelta()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceXY"
+              },
+              "parameters": [
+                "Player",
+                "0",
+                "Variable(Speed)",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         }
       ],
       "layers": [
