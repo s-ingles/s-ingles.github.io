@@ -1,2 +1,2 @@
-# s-ingles.github.io
+# Star Chaser
 Endless Space Shooter
