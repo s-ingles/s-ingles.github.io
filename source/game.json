@@ -4972,7 +4972,7 @@
               },
               "parameters": [
                 "",
-                "2",
+                "3",
                 "\"BMTimer\""
               ],
               "subInstructions": []
@@ -5187,7 +5187,7 @@
                   "parameters": [
                     "",
                     "Meteor4",
-                    "RandomInRange(16, 400)",
+                    "Player.X()",
                     "CameraY()-600",
                     ""
                   ],
@@ -5425,7 +5425,7 @@
                   "parameters": [
                     "",
                     "MeteorIndes4",
-                    "RandomInRange(16, 400)",
+                    "Player.X()",
                     "CameraY()-600",
                     ""
                   ],

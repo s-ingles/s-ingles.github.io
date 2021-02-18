@@ -290,9 +290,10 @@ gdjs.BaseSceneCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumb
 gdjs.BaseSceneCode.condition1IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("Score")) > 40000;
 }}
 if (gdjs.BaseSceneCode.condition1IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.BaseSceneCode.GDPlayerObjects1);
 gdjs.BaseSceneCode.GDMeteor4Objects1.length = 0;
 
-{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.BaseSceneCode.mapOfGDgdjs_46BaseSceneCode_46GDMeteor4Objects1Objects, gdjs.randomInRange(16, 400), gdjs.evtTools.camera.getCameraY(runtimeScene, "", 0) - 600, "");
+{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.BaseSceneCode.mapOfGDgdjs_46BaseSceneCode_46GDMeteor4Objects1Objects, (( gdjs.BaseSceneCode.GDPlayerObjects1.length === 0 ) ? 0 :gdjs.BaseSceneCode.GDPlayerObjects1[0].getPointX("")), gdjs.evtTools.camera.getCameraY(runtimeScene, "", 0) - 600, "");
 }}
 
 }
@@ -372,9 +373,10 @@ gdjs.BaseSceneCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumb
 gdjs.BaseSceneCode.condition1IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("Score")) > 160000;
 }}
 if (gdjs.BaseSceneCode.condition1IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.BaseSceneCode.GDPlayerObjects1);
 gdjs.BaseSceneCode.GDMeteorIndes4Objects1.length = 0;
 
-{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.BaseSceneCode.mapOfGDgdjs_46BaseSceneCode_46GDMeteorIndes4Objects1Objects, gdjs.randomInRange(16, 400), gdjs.evtTools.camera.getCameraY(runtimeScene, "", 0) - 600, "");
+{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.BaseSceneCode.mapOfGDgdjs_46BaseSceneCode_46GDMeteorIndes4Objects1Objects, (( gdjs.BaseSceneCode.GDPlayerObjects1.length === 0 ) ? 0 :gdjs.BaseSceneCode.GDPlayerObjects1[0].getPointX("")), gdjs.evtTools.camera.getCameraY(runtimeScene, "", 0) - 600, "");
 }}
 
 }
@@ -1703,7 +1705,7 @@ gdjs.BaseSceneCode.eventsList1(runtimeScene);} //End of subevents
 
 gdjs.BaseSceneCode.condition0IsTrue_0.val = false;
 {
-gdjs.BaseSceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, 2, "BMTimer");
+gdjs.BaseSceneCode.condition0IsTrue_0.val = gdjs.evtTools.runtimeScene.timerElapsedTime(runtimeScene, 3, "BMTimer");
 }if (gdjs.BaseSceneCode.condition0IsTrue_0.val) {
 {runtimeScene.getVariables().get("RandBM").setNumber(gdjs.randomInRange(1, 4));
 }{gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "BMTimer");
