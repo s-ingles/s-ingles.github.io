@@ -1824,7 +1824,30 @@
               "name": "HealthUp"
             },
             {
-              "name": "BonusPoints"
+              "name": "BronzeStar"
+            },
+            {
+              "name": "SilverStar"
+            },
+            {
+              "name": "GoldStar"
+            }
+          ]
+        },
+        {
+          "name": "PopScores",
+          "objects": [
+            {
+              "name": "SplashBronze"
+            },
+            {
+              "name": "SplashSilver"
+            },
+            {
+              "name": "SplashGold"
+            },
+            {
+              "name": "SplashMAX"
             }
           ]
         }
@@ -2322,9 +2345,9 @@
             {
               "name": "Health",
               "type": "Health::Health",
-              "Health": 150,
+              "Health": 400,
               "DamageCooldown": 0,
-              "MaxHealth": 150,
+              "MaxHealth": 400,
               "IsJustDamaged": false,
               "CooldownActive": false
             }
@@ -2929,7 +2952,7 @@
           ]
         },
         {
-          "name": "BonusPoints",
+          "name": "BronzeStar",
           "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -2960,7 +2983,29 @@
                         "y": 0
                       },
                       "customCollisionMask": []
-                    },
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "SilverStar",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets\\gfx\\PNG\\Power-ups\\star_silver.png",
@@ -2977,7 +3022,29 @@
                         "y": 0
                       },
                       "customCollisionMask": []
-                    },
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "GoldStar",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets\\gfx\\PNG\\Power-ups\\star_gold.png",
@@ -3127,6 +3194,82 @@
             "g": 255,
             "r": 243
           }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "SplashBronze",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "+250",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 20,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "SplashSilver",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "+500",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 20,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "SplashGold",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "+1000",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 20,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          }
+        },
+        {
+          "bold": true,
+          "italic": false,
+          "name": "SplashMAX",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "behaviors": [],
+          "string": "MAX",
+          "font": "assets\\gfx\\Bonus\\kenvector_future.ttf",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 255,
+            "r": 21
+          }
         }
       ],
       "events": [
@@ -3168,9 +3311,21 @@
                 "value": "ModVarScene"
               },
               "parameters": [
+                "BaseSpeed",
+                "=",
+                "250"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
                 "Speed",
                 "=",
-                "200"
+                "Variable(BaseSpeed)"
               ],
               "subInstructions": []
             },
@@ -4288,7 +4443,7 @@
               "parameters": [
                 "Enemies",
                 "Health",
-                "200",
+                "500",
                 ""
               ],
               "subInstructions": []
@@ -4723,6 +4878,18 @@
                     "2"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "20000"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
@@ -4757,6 +4924,18 @@
                     "RandEn",
                     "=",
                     "3"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "40000"
                   ],
                   "subInstructions": []
                 }
@@ -4841,6 +5020,18 @@
                     "1"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "5000"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
@@ -4875,6 +5066,18 @@
                     "RandBM",
                     "=",
                     "2"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "10000"
                   ],
                   "subInstructions": []
                 }
@@ -4913,6 +5116,18 @@
                     "3"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "20000"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
@@ -4947,6 +5162,18 @@
                     "RandBM",
                     "=",
                     "4"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "40000"
                   ],
                   "subInstructions": []
                 }
@@ -5031,6 +5258,18 @@
                     "1"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "20000"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
@@ -5065,6 +5304,18 @@
                     "RandGM",
                     "=",
                     "2"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "40000"
                   ],
                   "subInstructions": []
                 }
@@ -5103,6 +5354,18 @@
                     "3"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "80000"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
@@ -5139,6 +5402,18 @@
                     "4"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "Score",
+                    ">",
+                    "160000"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [
@@ -5173,7 +5448,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "PowerUps",
+          "comment": "Pick Ups",
           "comment2": ""
         },
         {
@@ -5245,14 +5520,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Create"
+                "value": "ModVarScene"
               },
               "parameters": [
-                "",
-                "BonusPoints",
-                "RandomInRange(16, 400)",
-                "CameraY()+500",
-                ""
+                "RandStar",
+                "=",
+                "RandomInRange(1,10)"
               ],
               "subInstructions": []
             },
@@ -5268,7 +5541,128 @@
               "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "RandStar",
+                    "<=",
+                    "6"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "BronzeStar",
+                    "RandomInRange(16, 400)",
+                    "CameraY()+500",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "RandStar",
+                    ">",
+                    "6"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "RandStar",
+                    "<=",
+                    "9"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "SilverStar",
+                    "RandomInRange(16, 400)",
+                    "CameraY()+500",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "RandStar",
+                    "=",
+                    "10"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "GoldStar",
+                    "RandomInRange(16, 400)",
+                    "CameraY()+500",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         },
         {
           "disabled": false,
@@ -5307,22 +5701,24 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "Delete"
               },
               "parameters": [
-                "Score",
-                "+",
-                "50"
+                "HealthUp",
+                ""
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "Create"
               },
               "parameters": [
-                "HealthUp",
+                "",
+                "SplashMAX",
+                "HealthUp.X()",
+                "HealthUp.Y()",
                 ""
               ],
               "subInstructions": []
@@ -5378,7 +5774,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "BonusPoints",
+                "BronzeStar",
                 "Player",
                 "",
                 "",
@@ -5406,7 +5802,217 @@
                 "value": "Delete"
               },
               "parameters": [
-                "BonusPoints",
+                "BronzeStar",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "SplashBronze",
+                "BronzeStar.X()",
+                "BronzeStar.Y()",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "Mute",
+                    "<",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\Audio\\doorOpen_002.ogg",
+                    "",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "SilverStar",
+                "Player",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "500"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "SilverStar",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "SplashSilver",
+                "SilverStar.X()",
+                "SilverStar.Y()",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "Mute",
+                    "<",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets\\sfx\\Audio\\doorOpen_002.ogg",
+                    "",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "GoldStar",
+                "Player",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "1000"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "GoldStar",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "SplashGold",
+                "GoldStar.X()",
+                "GoldStar.Y()",
                 ""
               ],
               "subInstructions": []
@@ -5477,6 +6083,39 @@
               },
               "parameters": [
                 "Pickups",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosY"
+              },
+              "parameters": [
+                "PopScores",
+                "<",
+                "CameraY()-500"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "PopScores",
                 ""
               ],
               "subInstructions": []
@@ -5953,7 +6592,7 @@
               },
               "parameters": [
                 "",
-                "10",
+                "5",
                 "\"SpeedTimer\""
               ],
               "subInstructions": []
@@ -5978,8 +6617,8 @@
               },
               "parameters": [
                 "Speed",
-                "*",
-                "1.1"
+                "=",
+                "Variable(BaseSpeed)+(Variable(Score)/1000)"
               ],
               "subInstructions": []
             }
